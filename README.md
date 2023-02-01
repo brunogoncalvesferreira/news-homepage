@@ -36,7 +36,7 @@ Primeiro desafio que construir foi o News Homepage. Nesse desafio a ideia era de
 
 ## Tecnologias
 
-Essas forem as tecnologias usadas no projeto
+Essas foram as tecnologias usadas no projeto
 
 - Html
 - Css

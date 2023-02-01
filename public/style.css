@@ -1,0 +1,270 @@
+:root {
+  --Soft-orange: hsl(35, 77%, 62%);
+  --Soft-red: hsl(5, 85%, 63%);
+
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+/* ------------- Global ----------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+#app {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+body {
+  background-color: var(--Off-white);
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+}
+
+/* ------------- Header ----------------- */
+header {
+  padding: 4rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+header nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+header nav ul li a {
+  font-size: 1.125rem;
+  color: var(--Dark-grayish-blue);
+  opacity: 0.8;
+  position: relative;
+}
+
+header nav ul li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--Dark-grayish-blue);
+  margin-top: 22px;
+  transition: width 0.3s;
+}
+
+header nav ul li a:hover::before {
+  width: 100%;
+}
+
+/* ------------- Button Mobile ----------------- */
+.btn-open-mobile,
+.btn-close-mobile {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  visibility: hidden;
+}
+
+/* ------------- Main ----------------- */
+main {
+  padding-bottom: 4rem;
+}
+
+main .container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.5rem;
+}
+
+main .container img {
+  width: 100%;
+}
+
+main .container .wrapper-text {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.2rem;
+}
+
+main .container .wrapper-text h1 {
+  font-size: 3.5rem;
+  color: var(--Very-dark-blue);
+}
+
+main .container .wrapper-text .content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+main .container .wrapper-text .content-text p {
+  font-size: 1.125rem;
+  line-height: 32px;
+  color: var(--Very-dark-blue);
+}
+
+main .container .wrapper-text .content-text button {
+  width: 14rem;
+  padding: 24px;
+  background-color: var(--Soft-red);
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--Off-white);
+  cursor: pointer;
+  transition: 300ms;
+}
+
+main .container .wrapper-text .content-text button:hover {
+  filter: brightness(0.9);
+}
+
+/* ------------- aside ----------------- */
+aside {
+  background-color: var(--Very-dark-blue);
+  padding: 1.25rem;
+}
+
+aside h2 {
+  font-size: 2.5rem;
+  color: var(--Soft-orange);
+  margin: 1.5rem 0;
+}
+
+aside h3 {
+  color: var(--Off-white);
+}
+
+aside p {
+  margin-top: 1.5rem;
+  color: var(--Grayish-blue);
+}
+
+aside div.line {
+  padding: 1.5rem 0;
+  margin: 1.5rem 0;
+  border-top: 1px solid var(--Grayish-blue);
+  border-bottom: 1px solid var(--Grayish-blue);
+}
+
+/* ------------- main card ----------------- */
+main .cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 6rem;
+}
+
+main .card {
+  display: flex;
+  gap: 1.5rem;
+}
+
+main .card img {
+  width: 120px;
+}
+
+main .card .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+main .card .card-text strong {
+  font-size: 2.5rem;
+  color: var(--Grayish-blue);
+}
+
+main .card .card-text h4 {
+  font-size: 1rem;
+  color: var(--Very-dark-blue);
+}
+
+main .card .card-text p {
+  max-width: 200px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--Dark-grayish-blue);
+}
+
+@media (max-width: 825px) {
+  #app {
+    max-width: 825px;
+  }
+
+  body.active {
+    overflow: hidden;
+  }
+
+  main .container {
+    grid-template-columns: 1fr;
+  }
+
+  main .cards {
+    flex-direction: column;
+  }
+
+  main .container .wrapper-text {
+    flex-direction: column;
+  }
+
+  main .cards .card .card-text p {
+    max-width: initial;
+  }
+
+  /* ------------- Button Mobile ----------------- */
+
+  .nav-bar {
+    position: fixed;
+    visibility: hidden;
+  }
+
+  .btn-open-mobile {
+    visibility: visible;
+    right: 0;
+  }
+  body.active .btn-open-mobile {
+    visibility: hidden;
+  }
+
+  body.active .btn-close-mobile {
+    visibility: visible;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+  }
+
+  body.active .nav-bar {
+    top: 0;
+    right: 0;
+    visibility: visible;
+    background-color: var(--Off-white);
+    width: 70vw;
+    height: 100vh;
+    z-index: 5;
+  }
+
+  body.active .nav-bar ul {
+    flex-direction: column;
+    margin: 50% 0 0 1.5rem;
+  }
+
+  body.active .nav-bar ul li a {
+    color: var(--Very-dark-blue);
+  }
+}

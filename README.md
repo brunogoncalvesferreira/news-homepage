@@ -22,7 +22,7 @@ Acesse o site é comece a desenvolver vários templates com seus desafios [Front
 
 ![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)
 
-[Projeto online](https://www.google.com)
+[Projeto online](https://brunogoncalvesferreira.github.io/news-homepage/)
 
 <br>
 <br>
